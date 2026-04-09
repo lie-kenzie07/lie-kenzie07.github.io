@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Relawan - Canvas Plant CC</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --brand-olive: #5A7B46;
+            --brand-bright-green: #39db4a;
+            --brand-dark: #1f2937;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f4;
+        }
+
+        .navbar {
+            padding: 15px 0;
+            background-color: white;
+        }
+        .brand-title {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #2b3a2f;
+            line-height: 1;
+            margin-bottom: 2px;
+            text-decoration: none;
+        }
+        .brand-subtitle {
+            font-size: 0.85rem;
+            color: #6c757d;
+            font-weight: 500;
+        }
+        .btn-nav-outline {
+            border: 2px solid var(--brand-olive);
+            color: var(--brand-olive);
+            border-radius: 50px;
+            padding: 8px 24px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .btn-nav-outline:hover {
+            background-color: var(--brand-olive);
+            color: white;
+        }
+
+        .register-container {
+            max-width: 650px;
+            margin: 60px auto;
+        }
+        .card-register {
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            background-color: white;
+        }
+        .form-label {
+            font-weight: 600;
+            color: var(--brand-dark);
+        }
+        .text-olive {
+            color: var(--brand-olive);
+        }
+        
+        .form-check-input:checked {
+            background-color: var(--brand-olive);
+            border-color: var(--brand-olive);
+        }
+
+        .btn-submit {
+            background-color: var(--brand-bright-green);
+            color: white;
+            border-radius: 50px;
+            padding: 14px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border: none;
+            box-shadow: 0 10px 20px rgba(57, 219, 74, 0.3);
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        .btn-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(57, 219, 74, 0.4);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex flex-column text-decoration-none" href="index.html">
+                <span class="brand-title">Canvas Plant</span>
+                <span class="brand-subtitle">Kolese Kanisius</span>
+            </a>
+            <div class="d-flex ms-auto">
+                <a href="index.html" class="btn-nav-outline">Kembali</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container register-container">
+        <div class="card card-register p-4 p-md-5">
+            <h2 class="fw-bold text-center text-olive mb-2">Formulir Relawan</h2>
+            <p class="text-center text-muted mb-5">Ayo ambil bagian dalam aksi penanaman pohon terdekat.</p>
+
+            <form action="success.html" method="get">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="fullName" class="form-label">Nama Lengkap</label>
+                        <input type="text" class="form-control" id="fullName" placeholder="Contoh: Kenzie Sigma" required>
+                    </div>
+                    <div class="col-md-6 mt-3 mt-md-0">
+                        <label for="angkatan" class="form-label">Angkatan / Status</label>
+                        <input type="text" class="form-control" id="angkatan" placeholder="Contoh: CC '24 atau Umum" required>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="emailAddress" class="form-label">Alamat Email Aktif</label>
+                    <input type="email" class="form-control" id="emailAddress" placeholder="email@contoh.com" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="locationSelect" class="form-label">Pilih Lokasi Penanaman Terdekat</label>
+                    <select class="form-select" id="locationSelect" required>
+                        <option value="" selected disabled>Pilih lokasi...</option>
+                        <option value="mangrove-pik">Hutan Mangrove PIK, Jakarta Utara</option>
+                        <option value="ciliwung">Bantaran Sungai Ciliwung, Jakarta Pusat</option>
+                        <option value="puncak">Lahan Kritis Puncak, Bogor</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label d-block">Peran yang Diminati (Pilih Satu)</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="role" id="rolePlanter" value="planter" required>
+                        <label class="form-check-label" for="rolePlanter">
+                            <strong>Eksekutor Tanam</strong> (Terjun langsung menggali dan menanam bibit)
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="role" id="roleLogistics" value="logistics">
+                        <label class="form-check-label" for="roleLogistics">
+                            <strong>Tim Logistik</strong> (Mengurus distribusi bibit, air, dan peralatan)
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="role" id="roleDoc" value="documentation">
+                        <label class="form-check-label" for="roleDoc">
+                            <strong>Dokumentasi & Media</strong> (Mengambil foto/video selama kegiatan)
+                        </label>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label d-block">Peralatan yang Bisa Dibawa Sendiri</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="sarung-tangan" id="tool1">
+                        <label class="form-check-label" for="tool1">Sarung Tangan</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="sepatu-boots" id="tool2">
+                        <label class="form-check-label" for="tool2">Sepatu Boots</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="sekop" id="tool3">
+                        <label class="form-check-label" for="tool3">Sekop Kecil</label>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label for="message" class="form-label">Pesan / Kondisi Kesehatan (Opsional)</label>
+                    <textarea class="form-control" id="message" rows="3" placeholder="Tuliskan jika ada alergi tanah, riwayat asma, atau pesan untuk panitia..."></textarea>
+                </div>
+
+                <div class="form-check mb-5">
+                    <input class="form-check-input" type="checkbox" id="commitment" required>
+                    <label class="form-check-label small text-muted" for="commitment">
+                        Saya berkomitmen untuk hadir pada hari H dan mengikuti arahan panitia demi keselamatan dan kelancaran misi penghijauan ini.
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-submit">Kirim Pendaftaran Relawan</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
